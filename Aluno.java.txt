@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class Aluno extends Usuario {
+
+    private ArrayList<Double> notas;
+
+    public Aluno(int id, String nome) {
+        super(id, nome);
+        notas = new ArrayList<>();
+    }
+
+    public void adicionarNota(double nota) {
+        notas.add(nota);
+    }
+
+    public ArrayList<Double> getNotas() {
+        return notas;
+    }
+
+    @Override
+    public void exibir() {
+        System.out.println("Aluno -> ID: " + id + " | Nome: " + nome);
+    }
+}

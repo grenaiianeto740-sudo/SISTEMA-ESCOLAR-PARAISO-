@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class Turma {
+
+    private String nome;
+    private ArrayList<Aluno> alunos;
+
+    public Turma(String nome) {
+        this.nome = nome;
+        alunos = new ArrayList<>();
+    }
+
+    public void adicionarAluno(Aluno a) {
+        alunos.add(a);
+    }
+
+    public ArrayList<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void listarAlunos() {
+        System.out.println("Alunos da turma " + nome);
+        for (Aluno a : alunos) {
+            a.exibir();
+        }
+    }
+}

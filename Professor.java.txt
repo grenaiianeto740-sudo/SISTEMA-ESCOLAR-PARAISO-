@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Professor extends Usuario {
+
+    private ArrayList<Disciplina> disciplinas;
+
+    public Professor(int id, String nome) {
+        super(id, nome);
+        disciplinas = new ArrayList<>();
+    }
+
+    public void adicionarDisciplina(Disciplina d) {
+        disciplinas.add(d);
+    }
+
+    public ArrayList<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    @Override
+    public void exibir() {
+        System.out.println("Professor -> ID: " + id + " | Nome: " + nome);
+    }
+}   }
+}
