@@ -1,0 +1,91 @@
+ private void criarDisciplina() {
+    System.out.print("Nome da Disciplina: ");
+    String nome = sc.nextLine();
+    disciplinas.add(new Disciplina(nome));
+    System.out.println("Disciplina criada!");
+}
+
+private void criarTrimestre() {
+    System.out.print("Nome do Trimestre: ");
+    String nome = sc.nextLine();
+    trimestres.add(new Trimestre(nome));
+    System.out.println("Trimestre criado!");
+}
+
+private void lancarNota() {
+
+    System.out.print("ID do Aluno: ");
+    int id = sc.nextInt();
+    sc.nextLine();
+
+    Aluno aluno = null;
+    for (Aluno a : alunos) {
+        if (a.getId() == id) {
+            aluno = a;
+            break;
+        }
+    }
+
+    if (aluno == null) {
+        System.out.println("Aluno não encontrado!");
+        return;
+    }
+
+    System.out.print("Nome da Disciplina: ");
+    String nomeDisc = sc.nextLine();
+
+    Disciplina disciplina = null;
+    for (Disciplina d : disciplinas) {
+        if (d.getNome().equalsIgnoreCase(nomeDisc)) {
+            disciplina = d;
+            break;
+        }
+    }
+
+    System.out.print("ID do Professor: ");
+    int idProf = sc.nextInt();
+    sc.nextLine();
+
+    Professor professor = null;
+    for (Professor p : professores) {
+        if (p.getId() == idProf) {
+            professor = p;
+            break;
+        }
+    }
+
+    System.out.print("Nome do Trimestre: ");
+    String nomeTrim = sc.nextLine();
+
+    Trimestre trimestre = null;
+    for (Trimestre t : trimestres) {
+        if (t.getNome().equalsIgnoreCase(nomeTrim)) {
+            trimestre = t;
+            break;
+        }
+    }
+
+    System.out.print("Valor da Nota: ");
+    double valor = sc.nextDouble();
+    sc.nextLine();
+
+    Nota nota = new Nota(disciplina, professor, trimestre, valor);
+    aluno.adicionarNota(nota);
+
+    System.out.println("Nota lançada com sucesso!");
+}
+
+private void mostrarRelatorio() {
+    System.out.print("ID do Aluno: ");
+    int id = sc.nextInt();
+    sc.nextLine();
+
+    for (Aluno a : alunos) {
+        if (a.getId() == id) {
+            a.mostrarRelatorio();
+            return;
+        }
+    }
+
+    System.out.println("Aluno não encontrado!");
+}

@@ -1,0 +1,12 @@
+public static void gravararquivos() {
+         String[] professores = new String[]{"Nelson Satetela", "John Brusse", "Eduvaldo Tendele"};
+         String path = "C:\\tem\\out.txt";
+         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
+             for (String line : professores) {
+                 bw.write(line);
+                 bw.newLine();
+             }
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+     }

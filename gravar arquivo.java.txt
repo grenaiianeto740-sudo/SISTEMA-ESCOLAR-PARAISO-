@@ -1,0 +1,25 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class GravarArquivo {
+    public static void gravarEmArquivo(String[] dados, String caminho) {
+        // Usando try-with-resources para fechar automaticamente o BufferedWriter
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminho, true))) {
+            for (String linha : dados) {
+                bw.write(linha); // Escreve a linha no arquivo
+                bw.newLine();    // Adiciona uma nova linha
+            }
+            System.out.println("Dados gravados com sucesso no arquivo: " + caminho);
+        } catch (IOException e) {
+            System.err.println("Erro ao gravar no arquivo:");
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        String[] professores = {"Nelson Satetele", "John Brusse", "Edualdo Tendele"};
+        String path = "C:\\tem\\out.txt"; // Caminho do arquivo
+        gravarEmArquivo(professores, path); // Chamada da função
+    }
+}
