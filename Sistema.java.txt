@@ -49,6 +49,7 @@ public class Sistema {
                     break;
             }
 
-        } while (opcao !
+        } while (opcao) !
 }
+
 }
