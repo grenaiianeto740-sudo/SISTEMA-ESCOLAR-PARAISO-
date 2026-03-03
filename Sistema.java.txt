@@ -25,8 +25,7 @@ public class Sistema {
             System.out.println("6 - Gravar em Ficheiro");
             System.out.println("0 - Sair");
 
-            opcao = sc.nextInt();
-            sc.nextLine();
+            opcaoint = sc.nextInt();
 
             switch (opcao) {
                 case 1:
@@ -49,7 +48,8 @@ public class Sistema {
                     break;
             }
 
-        } while (opcao) !
+        } 
 }
 
 }
+
